@@ -18,13 +18,14 @@ async function dbConnect(): Promise<void> {
         return;
     }
 
+    //{dbName:"mystrymessage"}
     //new DB Connection...
     try {
        const db = await mongoose.connect(process.env.MONGODB_URI || "",{dbName:"mystrymessage"}) ;
 
        //assignment
-       console.log("DB",db)
-       console.log("DB",db.connections)
+    //    console.log("DB",db)
+    //    console.log("DB",db.connections)
 
        connection.isConnected = db.connections[0].readyState;
 
